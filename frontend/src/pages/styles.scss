@@ -1,14 +1,96 @@
 .Main {
   &-page {
+    padding: 20px;
     h1 {
       font-family: Belleza;
       font-size: 96px;
       line-height: 111px;
+      margin: 20px;
 
       color: #abb868;
     }
   }
   &-header {
     text-align: center;
+  }
+  &-button-group {
+    width: 100%;
+    &__wrapper {
+      &-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    &__button {
+      width: 100%;
+      padding: 8px 0 8px 30px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+
+      background: #4e515b;
+      opacity: 0.7;
+      border-radius: 22px;
+      border: none;
+
+      font-family: Belleza;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #a5b553;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.Add {
+  text-align: center;
+  padding: 45px;
+
+  &-ingredients-input-wrapper {
+    position: relative;
+    margin-top: 10px;
+    input {
+      box-sizing: border-box;
+      height: 42px;
+      width: 100%;
+      background: #ebeed9;
+      border-radius: 10px;
+
+      font-family: Belleza;
+      font-size: 30px;
+      padding-left: 21px;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50px, -50%);
+    }
+  }
+
+  h3 {
+    font-family: Belleza;
+    font-size: 48px;
+    line-height: 55px;
+    text-align: center;
+
+    color: #d1d8a7;
+  }
+  &-search {
+    margin-top: 30px;
+  }
+}
+
+.hidden {
+  &--true {
+    display: none;
   }
 }
