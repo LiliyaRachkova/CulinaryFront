@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import cross from '../assets/cross.svg'
 import search from '../assets/search.svg'
 
 const Add = () => {
+
+    let history = useHistory()
 
     const [firstInputValue, setFirstInputValue] = useState('')
     const [secondInputValue, setSecondInputValue] = useState('')
@@ -12,7 +15,17 @@ const Add = () => {
     const [fifthInputValue, setFifthInputValue] = useState('')
 
     const handleSearch = () => {
-        console.log([firstInputValue, secondInputValue, thirdInputValue, fourthInputValue, fifthInputValue])
+        let valuesArr = [firstInputValue, secondInputValue, thirdInputValue, fourthInputValue, fifthInputValue]
+
+        let query = valuesArr.map((value) => {
+            return value ? value + "+" : null
+        }).join()
+
+        query = query.replace(/,/g, '').slice(0, -1)
+
+        if (!query) return
+        
+        history.push(`/recepies?ingr=${query}`)
     }
 
     return (

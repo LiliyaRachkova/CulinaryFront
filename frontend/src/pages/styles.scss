@@ -89,8 +89,61 @@
   }
 }
 
+.Recepies {
+  &-header {
+    display: flex;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    justify-content: space-evenly;
+    padding: 13px 0;
+    top: 0;
+    &-heading {
+      font-family: Belleza;
+      font-size: 48px;
+      color: #d1d8a7;
+      margin: 0;
+    }
+  }
+  &-body {
+    margin-top: 100px;
+    padding: 0px 10px;
+  }
+  &-block {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 20px;
+    &-data {
+      width: 75%;
+      margin-left: 10px;
+    }
+    h5,
+    p {
+      font-family: Belleza;
+      font-size: 14px;
+      line-height: 16px;
+
+      margin: 0;
+
+      color: #abb868;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
 .hidden {
   &--true {
     display: none;
+  }
+}
+
+.dummy {
+  &-photo {
+    height: 100px;
+    width: 100px;
+    background-color: #ccc;
   }
 }
