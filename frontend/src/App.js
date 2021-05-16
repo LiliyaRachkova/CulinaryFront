@@ -4,6 +4,7 @@ import './App.scss';
 import Main from './pages/Main'
 import Add from './pages/Add'
 import Recepies from './pages/Recepies'
+import background from './assets/bg.png'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Route path='/add' component={Add} exact />
       <Route path='/recepies' component={Recepies} />
     </div>
+    <img className="background" src={background} />
+    <div className="darker"> </div>
     </Router>
   );
 }

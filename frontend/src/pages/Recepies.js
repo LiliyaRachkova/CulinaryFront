@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { Server } from '../serverData/dummyServer'
 import axios from 'axios'
@@ -7,6 +7,7 @@ import './styles.scss'
 import favorite from '../assets/star.svg'
 
 import back from '../assets/back.svg'
+import fadedStar from '../assets/faded-star.svg'
 
 const Recepies = () => {
 
@@ -18,8 +19,6 @@ const Recepies = () => {
     let location = useLocation()
 
     let recepies = server.post(location.search.split('=')[1].split('+'))
-
-    console.log(recepies)
 
     // let recepies = axios.get('https://master-culinary-site.herokuapp.com/rec')
     // .then((data) => console.log(data))
@@ -47,8 +46,29 @@ const Recepies = () => {
         </div>
     )
 
+    console.log(selectedRec)
+
     const recPage = (
-        <div>qwerty</div>
+        <div className="Receipt">
+            <div className="Receipt-header">
+                <img className="Receipt-header-back" src={back} alt="search" onClick={() => history.push('/add')}/>
+                <h3 className="Receipt-header-heading">{selectedRec?.name}</h3>
+                <img className="Receipt-header-back" src={fadedStar} alt="star" onClick={() => console.log(4)}/>
+            </div>
+            <div className="Receipt-body">
+                <div className="Receipt-body-photo-wrapper">
+                    <div className="dummy-photo"></div>
+                    <div className="Receipt-body-photo-desc">
+                        {selectedRec?.composition.map(item => {
+                            return (
+                                <p className="Peceipt-body-photo-desc__units">{Object.keys(item)[0]}: {item[Object.keys(item)[0]]} {item.unit}</p>
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className="Receipt-body-desc">{selectedRec?.Инструкции}</div>
+            </div>
+        </div>
     )
 
     return selectedRec ? recPage : recList
