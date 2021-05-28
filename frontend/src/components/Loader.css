@@ -1,0 +1,21 @@
+.full-bg {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #202020;
+}
+
+.full-bg > h2 {
+  font-family: Belleza;
+  font-size: 96px;
+  line-height: 111px;
+
+  color: #abb868;
+}

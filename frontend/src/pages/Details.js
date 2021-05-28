@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { listReceiptsDetails } from '../actions/receiptActions'
+import Loader from '../components/Loader'
 
 import back from '../assets/back.svg'
 import fadedStar from '../assets/faded-star.svg'
@@ -28,7 +29,7 @@ const ReceiptDetails = ({ match }) => {
             <h3 className="Receipt-header-heading">{receipt?.name}</h3>
             <img className="Receipt-header-back" src={fadedStar} alt="star" onClick={() => console.log(4)}/>
         </div>
-        {loading && <div className="Recepies-body_not-found"><p>Loading... Please, wait</p></div>}
+        {loading && <Loader />}
         {!loading && <div className="Receipt-body">
             <div className="Receipt-body-photo-wrapper">
             <img className="Recepies-photo" src={`../images/${receipt?.photo}`}/>

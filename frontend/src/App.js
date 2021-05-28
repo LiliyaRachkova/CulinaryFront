@@ -5,7 +5,6 @@ import Main from './pages/Main'
 import Add from './pages/Add'
 import Recepies from './pages/Recepies'
 import Details from './pages/Details'
-import background from './assets/bg.png'
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <Route path='/recepies' component={Recepies} />
       <Route path='/receipt/:id' component={Details} />
     </div>
-    <img className="background" src={background} />
     <div className="darker"> </div>
     </Router>
   );

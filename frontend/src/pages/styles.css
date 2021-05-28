@@ -101,11 +101,13 @@
 }
 .Recepies-body,
 .Receipt-body {
-  margin-top: 100px;
+  height: 100vh;
   padding: 0px 10px;
 }
 .Recepies-body_not-found {
   display: flex;
+  margin-top: 200px;
+  justify-content: center;
   font-family: Belleza;
   font-size: 48px;
   color: #d1d8a7;
@@ -120,6 +122,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;
   border-radius: 20px;
+}
+.Recepies-block:first-child {
+  margin-top: 100px;
 }
 .Recepies-block-data,
 .Receipt-block-data {
@@ -159,6 +164,7 @@
   overflow-y: scroll;
 }
 .Receipt-body-photo-wrapper {
+  margin-top: 100px;
   display: flex;
 }
 .Receipt-body-photo-desc {

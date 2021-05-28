@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { listReceipts } from '../actions/receiptActions'
 import { getFiltered } from './utils'
+import Loader from '../components/Loader'
 import './styles.css'
 
 
@@ -20,6 +21,8 @@ const Recepies = () => {
 
     let filteredRecepies = getFiltered(receipts, location)
 
+    console.log(receipts[0])
+
 
     useEffect(() => {
         dispatch(listReceipts())
@@ -32,19 +35,19 @@ const Recepies = () => {
                 <h3 className="Recepies-header-heading">Recepies</h3>
             </div>
             <div className="Recepies-body">
-                {recepies?.loading && <div className="Recepies-body_not-found"><p>Loading... Please, wait</p></div>}
+                {loading && <Loader />}
                 {filteredRecepies.length ? filteredRecepies.map((rec) => (
                     <div className="Recepies-block" onClick={() => {
                         history.push(`/receipt/${rec._id}`)
                     }}>
                         <img className="Recepies-photo" src={`../images/${rec.photo}`}/>
                         <div className="Recepies-block-data">
-                            <h5> {rec.name.slice(0, 20)+'...'} </h5>
-                            <p> { rec.instruction.slice(0, 80)+'...' } </p>
+                            <h5> {rec.name} </h5>
+                            <p> { rec.composition_inter.join(', ') } </p>
                         </div>
                         {/* <img src={favorite} alt="favorite" /> */}
                     </div>
-                )) : !recepies?.loading && <div className="Recepies-body_not-found"><p>Sorry, but we didn't find any recepies</p></div>}
+                )) : !loading && <div className="Recepies-body_not-found"><p>Sorry, but we didn't find any recepies</p></div>}
             </div>
         </div>
     )
