@@ -1,25 +1,23 @@
-import { createStore, applyMiddleware } from "redux"
+import { createStore, applyMiddleware, combineReducers } from "redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import {
   receiptListReducer,
+  receiptDetailsReducer,
 } from "./reducers/receiptReducers"
 
-// const tabsItemsFromStorage = localStorage.getItem("tabsItems")
-//   ? JSON.parse(localStorage.getItem("tabsItems"))
-//   : []
 
-const initialState = {
-  // tabs: { tabsItems: tabsItemsFromStorage },
-  // spellTabs: { spellTabsItems: spellTabsItemsFromStorage },
-  // itemTabs: { itemTabsItems: itemTabsItemsFromStorage },
-  // userLogin: { userInfo: userInfoFromStorage },
-}
+const reducer = combineReducers({
+  receiptList: receiptListReducer,
+  receiptDetails: receiptDetailsReducer,
+})
+
+const initialState = {}
 
 const middleware = [thunk]
 
 const store = createStore(
-  receiptListReducer,
+  reducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 )

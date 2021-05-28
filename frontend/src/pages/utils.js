@@ -1,7 +1,8 @@
 
 
 export const getFiltered = (data, address) => {
-    const ingredients = address.search.split('=')[1].split('+')
+    const decodedAddress = decodeURI(address.search)
+    const ingredients = decodedAddress.split('=')[1].split('+')
 
     let resultArr = []
 

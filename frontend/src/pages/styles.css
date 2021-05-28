@@ -70,6 +70,11 @@
   text-align: center;
   color: #d1d8a7;
 }
+.Add-header-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 .Add-search {
   margin-top: 30px;
 }
@@ -110,6 +115,7 @@
 }
 .Recepies-block,
 .Receipt-block {
+  margin-bottom: 10px;
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;

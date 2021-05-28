@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import cross from '../assets/cross.svg'
 import search from '../assets/search.svg'
-
+import back from '../assets/back.svg'
 const Add = () => {
 
     let history = useHistory()
@@ -29,6 +29,8 @@ const Add = () => {
     }
 
     return (
+        <>
+        <img className="Add-header-back" src={back} alt="search" onClick={() => history.push('/')}/>
         <div className="Add">
             <h3>Ingredients</h3>
             <div className="Add-ingredients-wrapper">
@@ -60,6 +62,7 @@ const Add = () => {
             </div>
             <img className="Add-search" src={search} alt="search" onClick={handleSearch}/>
         </div>
+        </>
     )
 }
 
