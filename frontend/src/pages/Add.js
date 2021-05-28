@@ -18,7 +18,7 @@ const Add = () => {
         let valuesArr = [firstInputValue, secondInputValue, thirdInputValue, fourthInputValue, fifthInputValue]
 
         let query = valuesArr.map((value) => {
-            return value ? value + "+" : null
+            return value ? value[0].toUpperCase() + value.slice(1) + "+" : null
         }).join()
 
         query = query.replace(/,/g, '').slice(0, -1)

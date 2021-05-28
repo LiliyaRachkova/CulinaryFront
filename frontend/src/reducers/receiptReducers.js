@@ -12,6 +12,7 @@ export const receiptListReducer = (state = { receipts: [] }, action) => {
     case RECEIPT_LIST_REQUEST:
       return { loading: true, receipts: [] }
     case RECEIPT_LIST_SUCCESS:
+      console.log(action.payload[0])
       return { loading: false, receipts: action.payload }
     case RECEIPT_LIST_FAIL:
       return { loading: false, error: action.payload }
@@ -23,12 +24,8 @@ export const receiptListReducer = (state = { receipts: [] }, action) => {
 export const receiptDetailsReducer = (
   state = {
     receipt: {
-      sav: [],
-      abilities: [],
-      skills: [],
-      sense: [],
-      languages: [],
-      actions: [],
+      composition: [],
+      composition_inter: [],
     },
   },
   action

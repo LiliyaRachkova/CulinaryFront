@@ -4,6 +4,7 @@ import './App.css';
 import Main from './pages/Main'
 import Add from './pages/Add'
 import Recepies from './pages/Recepies'
+import Details from './pages/Details'
 import background from './assets/bg.png'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path='/' component={Main} exact />
       <Route path='/add' component={Add} exact />
       <Route path='/recepies' component={Recepies} />
+      <Route path='/receipt/:id' component={Details} />
     </div>
     <img className="background" src={background} />
     <div className="darker"> </div>

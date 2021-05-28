@@ -10,5 +10,15 @@ const getReceipts = asyncHandler(async (req, res) => {
   res.json(receipts)
 })
 
+const getReceiptsById = asyncHandler(async (req, res) => {
+  const receipt = await Receipt.findById(req.params.id)
 
-export { getReceipts }
+  if (receipt) {
+    res.json(receipt)
+  } else {
+    res.status(404)
+    throw new Error("Receipt not found")
+  }
+})
+
+export { getReceipts, getReceiptsById }

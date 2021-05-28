@@ -32,6 +32,7 @@ export const listReceipts = () => async (dispatch) => {
 
 export const listReceiptsDetails = (id) => async (dispatch) => {
   try {
+    console.log(234)
     dispatch({ type: RECEIPT_DETAILS_REQUEST })
 
     const { data } = await axios.get(`/api/receipts/${id}`)
