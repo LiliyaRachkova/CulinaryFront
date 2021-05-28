@@ -1,11 +1,9 @@
 .App {
   height: 100vh;
   z-index: 1;
-}
-.background {
-  position: fixed;
-  top: 0;
-  z-index: -2;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('./assets/bg.jpg') no-repeat;
+  background-size: auto 100%;
 }
 
 .darker {
@@ -15,4 +13,10 @@
   top: 0%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
+}
+
+@media (min-width: 1280px) {
+  .App {
+    background-size: 100% 100%;
+  }
 }

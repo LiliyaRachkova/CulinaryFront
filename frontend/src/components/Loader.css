@@ -20,3 +20,9 @@
 
   color: #abb868;
 }
+
+@media (max-width: 600px) {
+  .full-bg > img {
+    width: 80%;
+  }
+}

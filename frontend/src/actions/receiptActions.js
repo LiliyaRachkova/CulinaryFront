@@ -15,10 +15,10 @@ export const listReceipts = () => async (dispatch) => {
 
     const { data } = await axios.get("/api/receipts")
 
-    dispatch({
-      type: RECEIPT_LIST_SUCCESS,
-      payload: data,
-    })
+    // dispatch({
+    //   type: RECEIPT_LIST_SUCCESS,
+    //   payload: data,
+    // })
   } catch (error) {
     dispatch({
       type: RECEIPT_LIST_FAIL,
