@@ -1,5 +1,6 @@
 .Main-page {
   padding: 20px;
+  height: 100vh;
 }
 .Main-page h1 {
   font-family: Belleza;
@@ -24,10 +25,9 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  background: #4e515b;
-  opacity: 0.9;
-  border-radius: 22px;
+  background-color: rgba(70, 70, 70, 0.7);
   border: none;
+  border-radius: 10px;
   font-family: Belleza;
   font-size: 24px;
   line-height: 28px;
@@ -36,9 +36,11 @@
 .Main-button-group__button:focus {
   outline: none;
 }
+
 .Add {
   text-align: center;
   padding: 45px;
+  height: 100vh;
 }
 .Add-ingredients-input-wrapper {
   position: relative;
@@ -84,7 +86,7 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 13px 0;
   top: 0;
 }
@@ -99,10 +101,17 @@
   color: #d1d8a7;
   margin: 0;
 }
+
+.Recepies-header-back {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .Recepies-body,
 .Receipt-body {
-  height: 100vh;
-  padding: 0px 10px;
+  padding: 100px 10px 10px 10px;
 }
 .Recepies-body_not-found {
   display: flex;
@@ -123,9 +132,7 @@
   padding: 15px;
   border-radius: 20px;
 }
-.Recepies-block:first-child {
-  margin-top: 100px;
-}
+
 .Recepies-block-data,
 .Receipt-block-data {
   width: 75%;

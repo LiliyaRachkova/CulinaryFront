@@ -43,7 +43,7 @@ const Recepies = () => {
                         <img className="Recepies-photo" src={`../images/${rec.photo}`}/>
                         <div className="Recepies-block-data">
                             <h5> {rec.name} </h5>
-                            <p> { rec.composition_inter.join(', ') } </p>
+                            <p> { rec.composition_inter.slice(0, 9).join(', ') } </p>
                         </div>
                         {/* <img src={favorite} alt="favorite" /> */}
                     </div>
