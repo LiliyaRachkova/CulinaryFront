@@ -27,7 +27,7 @@ const ReceiptDetails = ({ match }) => {
         <div className="Receipt-header">
             <img className="Receipt-header-back" src={back} alt="search" onClick={() => history.goBack()}/>
             <h3 className="Receipt-header-heading">{receipt?.name}</h3>
-            <img className="Receipt-header-back" src={fadedStar} alt="star" onClick={() => console.log(4)}/>
+            <img className="Receipt-header-star" src={fadedStar} alt="star" onClick={() => console.log(4)}/>
         </div>
         {loading && <Loader />}
         {!loading && <div className="Receipt-body">
