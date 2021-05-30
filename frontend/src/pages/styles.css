@@ -89,6 +89,7 @@
   padding: 13px 0;
   top: 0;
 }
+
 .Receipt-header {
   justify-content: space-evenly;
   padding: 13px 10px;
@@ -103,6 +104,10 @@
   font-size: 48px;
   color: #d1d8a7;
   margin: 0;
+}
+
+.Recepies-header {
+  justify-content: center;
 }
 
 .Receipt-header-star {
