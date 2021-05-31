@@ -146,6 +146,19 @@
 .Recepies-body_not-found p {
   text-align: center;
 }
+.info {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.info-body > p {
+  margin: 0;
+  font-family: Belleza;
+  font-size: 33px;
+  line-height: 40px;
+  text-align: center;
+  color: #abb868;
+}
 .img-favourite {
   height: 55px;
   width: 55px;

@@ -24,7 +24,7 @@ const Main = () => {
                         <h3>Favourites</h3>
                     </div>
                 </button>
-                <button className="Main-button-group__button">
+                <button className="Main-button-group__button" onClick={() => history.push('/info')}>
                 <img src={info} alt='info'/>
                     <div className="Main-button-group__wrapper-button">
                         <h3>Info</h3>
