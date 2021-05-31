@@ -19,6 +19,16 @@
   width: 100%;
   text-align: center;
 }
+@media (max-width: 400px) {
+  .Recepies-header {
+    justify-content: flex-end !important;
+  }
+  .Recepies-header > h3 {
+    font-size: 40px;
+    margin-right: 10px !important;
+  }
+}
+
 .Main-button-group__button {
   width: 100%;
   padding: 8px 0 8px 30px;
@@ -131,9 +141,6 @@
 .Receipt-body {
   padding: 100px 10px 10px 10px;
 }
-.Receipt-body {
-  height: 100vh;
-}
 .Recepies-body_not-found {
   display: flex;
   margin-top: 200px;
@@ -151,6 +158,9 @@
   display: flex;
   align-items: center;
 }
+.info-body {
+  padding: 100px 20px;
+}
 .info-body > p {
   margin: 0;
   font-family: Belleza;
@@ -163,6 +173,9 @@
   height: 55px;
   width: 55px;
   cursor: pointer;
+}
+.Receipt-header > .img-favourite {
+  margin-right: 20px;
 }
 .Recepies-block,
 .Receipt-block {
@@ -193,7 +206,7 @@
   margin-top: 20px;
 }
 .Receipt {
-  margin-bottom: 5px;
+  min-height: 100vh;
 }
 .Receipt-header h3 {
   font-size: 100%;

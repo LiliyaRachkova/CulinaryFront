@@ -9,7 +9,7 @@ const Info = () => {
         <div className="info">
             <div className="Recepies-header">
                 <img className="Recepies-header-back" src={back} alt="search" onClick={() => history.goBack()}/>
-                <h3 className="Recepies-header-heading">Favourites</h3>
+                <h3 className="Recepies-header-heading">Info</h3>
             </div>
             <div className="info-body">
             <p>

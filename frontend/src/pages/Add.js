@@ -13,9 +13,10 @@ const Add = () => {
     const [thirdInputValue, setThirdInputValue] = useState('')
     const [fourthInputValue, setFourthInputValue] = useState('')
     const [fifthInputValue, setFifthInputValue] = useState('')
+    const [sixthInputValue, setSixthInputValue] = useState('')
 
     const handleSearch = () => {
-        let valuesArr = [firstInputValue, secondInputValue, thirdInputValue, fourthInputValue, fifthInputValue]
+        let valuesArr = [firstInputValue, secondInputValue, thirdInputValue, fourthInputValue, fifthInputValue, sixthInputValue]
 
         let query = valuesArr.map((value) => {
             return value ? value[0].toUpperCase() + value.slice(1) + "+" : null
@@ -57,7 +58,12 @@ const Add = () => {
 
                 <div className={`Add-ingredients-input-wrapper hidden--${!fourthInputValue}`}>
                     <input value={fifthInputValue} onChange={(e) => setFifthInputValue(e.target.value)}/>
-                    <img src={cross} onClick={() => setFifthInputValue('')} alt="delete" className={`hidden--${!fifthInputValue}`}/>
+                    <img src={cross} onClick={() => setFifthInputValue('')} alt="delete" className={`hidden--${!fifthInputValue || !!sixthInputValue}`}/>
+                </div>
+
+                <div className={`Add-ingredients-input-wrapper hidden--${!fifthInputValue}`}>
+                    <input value={sixthInputValue} onChange={(e) => setSixthInputValue(e.target.value)}/>
+                    <img src={cross} onClick={() => setSixthInputValue('')} alt="delete" className={`hidden--${!sixthInputValue}`}/>
                 </div>
             </div>
             <img className="Add-search" src={search} alt="search" onClick={handleSearch}/>
