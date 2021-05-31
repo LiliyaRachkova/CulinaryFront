@@ -4,15 +4,23 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import {
   receiptListReducer,
   receiptDetailsReducer,
+  favouritesReducer,
 } from "./reducers/receiptReducers"
 
 
 const reducer = combineReducers({
   receiptList: receiptListReducer,
   receiptDetails: receiptDetailsReducer,
+  favourites: favouritesReducer,
 })
 
-const initialState = {}
+const favouritesItemsFromStorage = localStorage.getItem("favouritesItems")
+  ? JSON.parse(localStorage.getItem("favouritesItems"))
+  : []
+
+const initialState = {
+  favourites: { favouritesItems: favouritesItemsFromStorage },
+}
 
 const middleware = [thunk]
 

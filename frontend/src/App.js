@@ -5,6 +5,7 @@ import Main from './pages/Main'
 import Add from './pages/Add'
 import Recepies from './pages/Recepies'
 import Details from './pages/Details'
+import Favourites from './pages/Favourites'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/add' component={Add} exact />
       <Route path='/recepies' component={Recepies} />
       <Route path='/receipt/:id' component={Details} />
+      <Route path='/favourites' component={Favourites} />
     </div>
     <div className="darker"> </div>
     </Router>

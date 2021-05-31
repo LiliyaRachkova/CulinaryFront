@@ -7,6 +7,8 @@ import {
   RECEIPT_DETAILS_REQUEST,
   RECEIPT_DETAILS_SUCCESS,
   RECEIPT_DETAILS_FAIL,
+  FAVOURITES_ADD_ITEM,
+  FAVOURITES_REMOVE_ITEM,
 } from "../constants/receiptConstants"
 
 export const listReceipts = () => async (dispatch) => {
@@ -32,7 +34,6 @@ export const listReceipts = () => async (dispatch) => {
 
 export const listReceiptsDetails = (id) => async (dispatch) => {
   try {
-    console.log(234)
     dispatch({ type: RECEIPT_DETAILS_REQUEST })
 
     const { data } = await axios.get(`/api/receipts/${id}`)
@@ -52,3 +53,24 @@ export const listReceiptsDetails = (id) => async (dispatch) => {
   }
 }
 
+export const addToFavourites = (id) => async (dispatch, getState) => {
+  const { data } = await axios.get(`/api/receipts/${id}`)
+
+  dispatch({
+    type: FAVOURITES_ADD_ITEM,
+    payload: {
+      ...data,
+    },
+  })
+
+  localStorage.setItem("favouritesItems", JSON.stringify(getState().favourites.favouritesItems))
+}
+
+export const removeFromFavourites = (id) => (dispatch, getState) => {
+  dispatch({
+    type: FAVOURITES_REMOVE_ITEM,
+    payload: id,
+  })
+
+  localStorage.setItem("favouritesItems", JSON.stringify(getState().favourites.favouritesItems))
+}

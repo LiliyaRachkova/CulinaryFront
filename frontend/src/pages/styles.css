@@ -80,6 +80,11 @@
 .Add-search {
   margin-top: 30px;
 }
+
+.Recepies {
+  min-height: 100vh;
+}
+
 .Recepies-header,
 .Receipt-header {
   display: flex;
@@ -111,6 +116,7 @@
 }
 
 .Receipt-header-star {
+  cursor: pointer;
   margin-right: 20px;
 }
 
@@ -139,6 +145,11 @@
 }
 .Recepies-body_not-found p {
   text-align: center;
+}
+.img-favourite {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
 }
 .Recepies-block,
 .Receipt-block {

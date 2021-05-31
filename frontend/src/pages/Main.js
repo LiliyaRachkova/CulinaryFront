@@ -18,9 +18,9 @@ const Main = () => {
                         <h3>Add ingredients</h3>
                     </div>
                 </button>
-                <button className="Main-button-group__button">
+                <button className="Main-button-group__button" onClick={() => history.push('/favourites')}>
                 <img src={star} alt='star'/>
-                <div className="Main-button-group__wrapper-button">
+                <div className="Main-button-group__wrapper-button" >
                         <h3>Favourites</h3>
                     </div>
                 </button>
