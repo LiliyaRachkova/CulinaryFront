@@ -11,4 +11,4 @@ deploy:
 provider: heroku
 project: ./build/
 on:
-branch: master
+  branch: dev
