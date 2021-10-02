@@ -5,9 +5,7 @@ cache:
   directories:
     - node_modules
 script:
-  - npm run
-  - npm test —prefix frontend
-  - npm run build —prefix frontend
+  - npm client
 deploy:
 provider: heroku
 project: ./build/
