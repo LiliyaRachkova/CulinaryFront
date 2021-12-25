@@ -23,7 +23,7 @@ const Favourites = () => {
         dispatch(removeFromFavourites(item._id))
       }
 
-
+    //Экран Избранное
     return  (
         <div className="Recepies">
             <div className="Recepies-header">
@@ -52,10 +52,7 @@ const Favourites = () => {
                 )) : <div className="Recepies-body_not-found"><p>Sorry, but we didn't find any favourites</p></div>}
             </div>
         </div>
-    )
-
-    
-
+    )    
 }
 
 export default Favourites
